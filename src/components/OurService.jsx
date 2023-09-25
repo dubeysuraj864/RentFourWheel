@@ -1,4 +1,4 @@
-import OurServiceCar from "../assets/ourservice-image.png";
+import OurServiceCar from "../images/ourservice-image.png";
 function OurService() {
   return (
     <>

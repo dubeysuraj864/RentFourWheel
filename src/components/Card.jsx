@@ -1,4 +1,4 @@
-import Car1 from "../assets/car1.png";
+import Car1 from "../images/car1.png";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
 
 function Card() {

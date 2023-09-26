@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import AllCards from "./pages/AllCards";
 import AgencyRegister from "./pages/AgencyRegister";
 import AgencyLogin from "./pages/AgencyLogin";
+import ListedVehicle from "./pages/ListedVehicle";
 import AddVehicle from "./pages/AddVehicle";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/agency-login" element={<AgencyLogin />} />
             <Route path="/cards" element={<AllCards/>} />
             <Route path="/add-vehicle" element={<AddVehicle/>} />
+            <Route path="/listed-vehicle" element={<ListedVehicle/>} />
 
           </Route>
         </Routes>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function AddVehicle() {
@@ -7,7 +7,8 @@ function AddVehicle() {
   const [vehicleNumber, setVehicleNumber] = useState("");
   const [vehicleSeats, setVehicleSeats] = useState("");
   const [vehicleRent, setVehicleRent] = useState("");
-
+  const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -18,7 +19,15 @@ function AddVehicle() {
       vehicleRent: vehicleRent,
     };
 
-    const res = await axios.post("http://localhost/api/vehicle.php",formData);
+ await axios.post("http://localhost/api/vehicle.php", formData);
+
+
+   
+      setTimeout(() => {
+        setMsg(" Vehicle added successfully");
+        navigate("/listed-vehicle");
+      }, 2000);
+    
   };
 
   return (
@@ -29,7 +38,7 @@ function AddVehicle() {
           className="form-child w-[100%] md:w-[500px] border p-10 rounded-lg"
         >
           <h1 className="text-5xl font-semibold">Add New Vehicles</h1>
-
+           <p className="text-red-600">{msg}</p>
           <div className="name mt-10 flex flex-col items-start my-4 ">
             <label htmlFor="model">Vehicle Model</label>
             <input

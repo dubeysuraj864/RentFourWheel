@@ -1,7 +1,18 @@
 import Card from "../components/Card";
+import { useEffect, useState } from "react";
 import {SiAudi,SiMercedes,SiBmw,SiTesla,SiFerrari} from "react-icons/si"
 
 function AllCards() {
+  const [vehicleData, setVehicleData] = useState();
+  useEffect(() => {
+    const getVehicleData = async () => {
+      const data = await fetch("http://localhost/api/vehicle.php");
+      const result = await data.json();
+      console.log(result);
+      setVehicleData(result);
+    };
+    getVehicleData();
+  }, []);
   return (
     <div>
         <div className="our-luxury">
@@ -15,21 +26,20 @@ function AllCards() {
             </div>
         </div>
       <div className="div all-cards flex flex-wrap justify-center">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      {vehicleData &&
+            vehicleData.map((item) => {
+              return (
+                <>
+                  <Card
+                    key={item.id}
+                    model={item.model}
+                    number={item.number}
+                    seats={item.seats}
+                    rent={item.vehicleRent}
+                  />
+                </>
+              );
+            })}
       </div>
     </div>
   );

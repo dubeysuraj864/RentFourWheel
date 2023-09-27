@@ -32,7 +32,7 @@ function ListedVehicle() {
   return (
     <>
       <div className="listed-vehicle relative">
-       <Link to="/add-vehicle"> <span className="bg-red-500 rounded-md fixed right-[10px] bottom-[100px] flex justify-around items-center w-max cursor-pointer drop-shadow-xl hover:drop-shadow-[0px]  px-2 py-2 transition-all text-white text-2xl ">
+       <Link to="/add-vehicle"> <span className="bg-red-500 z-20 rounded-md fixed right-[10px] bottom-[100px] flex justify-around items-center w-max cursor-pointer drop-shadow-xl hover:drop-shadow-[0px]  px-2 py-2 transition-all text-white text-2xl ">
           <MdAddCircle className="text-2xl mr-2" /> Add More
         </span></Link>
         <h1 className="text-4xl font-bold my-10 text-center">

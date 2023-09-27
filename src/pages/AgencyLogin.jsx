@@ -3,9 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 
 function AgencyLogin() {
-  const [customerName, setCustomerName] = useState("");
-  const [customerEmail, setCustomerEmail] = useState("");
-  const [customerPassword, setCustomerPassword] = useState("");
+  const [agencyName, setAgencyName] = useState("");
+  const [agencyEmail, setAgencyEmail] = useState("");
+  const [agencyPassword, setAgencyPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -13,23 +13,31 @@ function AgencyLogin() {
     e.preventDefault();
 
     const formData = {
-      customerName: customerName,
-      customerEmail: customerEmail,
-      customerPassword: customerPassword,
+      agencyName: agencyName,
+      agencyEmail: agencyEmail,
+      agencyPassword: agencyPassword,
     };
 
-    const result = await axios("http://localhost/api/customers.php", formData);
+    const result = await axios("http://localhost/api/agency.php", formData);
+    const data = await result.data;
 
-    const userData = JSON.parse(localStorage.getItem("user"));
+    const userData = data[0];
 
     if (
-      userData.customerName === customerName &&
-      userData.customerEmail === customerEmail &&
-      userData.customerPassword === customerPassword
+      userData.agencyName === agencyName &&
+      userData.agencyEmail === agencyEmail &&
+      userData.agencyPassword === agencyPassword
     ) {
       navigate("/add-vehicle");
     } else {
       alert("Please register yourself first...");
+    }
+
+    const auth = localStorage.setItem("agency", JSON.stringify(formData));
+    if (auth) {
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
@@ -49,9 +57,9 @@ function AgencyLogin() {
             <div className="name mt-10 flex flex-col items-start my-4 ">
               <label htmlFor="name">Name</label>
               <input
-                value={customerName}
+                value={agencyName}
                 onChange={(e) => {
-                  setCustomerName(e.target.value);
+                  setAgencyName(e.target.value);
                 }}
                 className="outline-none w-[100%] border-b-2"
                 type="text"
@@ -64,9 +72,9 @@ function AgencyLogin() {
             <div className="email flex flex-col items-start my-4">
               <label htmlFor="email">Email</label>
               <input
-                value={customerEmail}
+                value={agencyEmail}
                 onChange={(e) => {
-                  setCustomerEmail(e.target.value);
+                  setAgencyEmail(e.target.value);
                 }}
                 className="outline-none w-[100%] border-b-2"
                 type="email"
@@ -78,9 +86,9 @@ function AgencyLogin() {
             <div className="password flex flex-col items-start my-4">
               <label htmlFor="password">Password</label>
               <input
-                value={customerPassword}
+                value={agencyPassword}
                 onChange={(e) => {
-                  setCustomerPassword(e.target.value);
+                  setAgencyPassword(e.target.value);
                 }}
                 className=" w-[100%] outline-none border-b-2"
                 type="password"
@@ -95,7 +103,10 @@ function AgencyLogin() {
             >
               Login
             </button>
-            <Link to="/login" className="border-yellow-400 border-b-2 mx-8 py-1">
+            <Link
+              to="/login"
+              className="border-yellow-400 border-b-2 mx-8 py-1"
+            >
               {" "}
               Are you a customer?
             </Link>

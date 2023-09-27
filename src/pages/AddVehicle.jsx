@@ -20,6 +20,7 @@ function AddVehicle() {
     };
 
     const res = await axios.post("http://localhost/api/vehicle.php", formData);
+    console.log(res)
     setTimeout(() => {
       setMsg(" Vehicle added successfully");
       navigate("/listed-vehicle");

@@ -1,4 +1,3 @@
-import RedCar from "../images/red-car.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -23,8 +22,7 @@ function Registration() {
       "http://localhost/api/customers.php",
       formData
     );
-
-    localStorage.setItem("user", JSON.stringify(formData));
+    console.log(result.data);
     setTimeout(() => {
       navigate("/login");
     }, 2000);
@@ -33,7 +31,7 @@ function Registration() {
   return (
     <>
       <div className="registration h-[80vh] flex justify-around items-center">
-        <div className="left w-[100%] md:w-[500px]">
+        {/* <div className="left w-[100%] md:w-[500px]">
           <div className="os-left w-[100%] md:w-[500px] h-[40vh] relative flex justify-center items-center ">
             <div className="shape2 rotate-45 absolute -z-20 md:left-[40%] left-[0%] top-[20%] bg-[#F1BC00] w-[500px] h-[400px] md:w-[300px] md:h-[300px]"></div>
 
@@ -45,7 +43,7 @@ function Registration() {
               alt="OurServiceCar"
             />
           </div>
-        </div>
+        </div> */}
         <div className="form w-[100%] md:w-[500px] flex justify-center ">
           <form
             onSubmit={handleSubmit}

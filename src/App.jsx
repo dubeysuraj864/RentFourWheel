@@ -13,16 +13,17 @@ import PrivateComponents from "./components/PrivateComponents";
 import Logout from "./pages/Logout";
 import Profile from "./pages/Profile";
 
-function App() {
+function App(location) {
   return (
     <div className="App overflow-hidden">
       <BrowserRouter>
-        <Navbar />
+        {location.path !== "/login" && <Navbar />}
+
         <Routes>
           <Route element={<PrivateComponents />}>
             <Route path="/" element={<Home />} />
-            <Route path="/Profile" element={<Profile />} />
-            <Route path="/Logout" element={<Logout />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/cards" element={<AllCards />} />
           </Route>
           <Route path="/register" element={<Registration />} />

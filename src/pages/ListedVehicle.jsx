@@ -3,6 +3,8 @@ import Card from "../components/Card";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { MdAddCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function ListedVehicle() {
   const [vehicleData, setVehicleData] = useState();
@@ -24,12 +26,15 @@ function ListedVehicle() {
   const navigate = useNavigate();
 
   const handleEdit = (id) => {
-    navigate(`/edit-vehicle/${id}`);    
+    navigate(`/edit-vehicle/${id}`);
   };
 
   return (
     <>
-      <div className="listed-vehicle">
+      <div className="listed-vehicle relative">
+       <Link to="/add-vehicle"> <span className="bg-red-500 rounded-md fixed right-[10px] bottom-[100px] flex justify-around items-center w-max cursor-pointer drop-shadow-xl hover:drop-shadow-[0px]  px-2 py-2 transition-all text-white text-2xl ">
+          <MdAddCircle className="text-2xl mr-2" /> Add More
+        </span></Link>
         <h1 className="text-4xl font-bold my-10 text-center">
           {" "}
           Listed Vehicle

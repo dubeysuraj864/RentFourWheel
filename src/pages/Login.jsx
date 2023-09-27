@@ -95,7 +95,7 @@ function Login() {
             >
               Login
             </button>
-            <Link className="border-yellow-400 border-b-2 mx-8 py-1">
+            <Link to="/agency-login" className="border-yellow-400 border-b-2 mx-8 py-1">
               {" "}
               Car Rental Agency?
             </Link>

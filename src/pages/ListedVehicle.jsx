@@ -1,34 +1,60 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ListedVehicle() {
   const [vehicleData, setVehicleData] = useState();
+
   useEffect(() => {
-    const getVehicleData = async () => {
-      const data = await fetch("http://localhost/api/vehicle.php");
-      const result = await data.json();
-      console.log(result);
-      setVehicleData(result);
-    };
     getVehicleData();
   }, []);
+
+  const getVehicleData = async () => {
+    const data = await fetch("http://localhost/api/vehicle.php");
+    const result = await data.json();
+    setVehicleData(result);
+  };
+
+  const handleDelete = async (id) => {
+    await axios.delete("http://localhost/api/vehicle.php/" + id);
+    getVehicleData();
+  };
+  const navigate = useNavigate();
+
+  const handleEdit = (id) => {
+    navigate(`/edit-vehicle/${id}`);    
+  };
+
   return (
     <>
       <div className="listed-vehicle">
-       <h1 className="text-4xl font-bold my-10 text-center"> Listed Vehicle</h1>
+        <h1 className="text-4xl font-bold my-10 text-center">
+          {" "}
+          Listed Vehicle
+        </h1>
         <div className="flex justify-center flex-wrap ">
           {vehicleData &&
             vehicleData.map((item) => {
               return (
-                <>
+                <div key={item.id} className="relative">
+                  <AiFillDelete
+                    onClick={() => handleDelete(item.id)}
+                    className="absolute text-3xl cursor-pointer right-[30px] text-white bg-red-500 p-2 rounded-full top-[50px] z-10"
+                  />
+                  <AiFillEdit
+                    onClick={() => handleEdit(item.id)}
+                    className="absolute text-3xl cursor-pointer right-[30px] text-black bg-white p-2 rounded-full top-[300px] z-10"
+                  />
+
                   <Card
-                    key={item.id}
                     model={item.model}
                     number={item.number}
                     seats={item.seats}
                     vehicleRent={item.vehicleRent}
                   />
-                </>
+                </div>
               );
             })}
         </div>

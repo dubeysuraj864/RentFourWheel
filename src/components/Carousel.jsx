@@ -53,15 +53,15 @@ function Carousel() {
             {vehicleData &&
               vehicleData.map((item) => {
                 return (
-                  <>
+               
                     <Card
                       key={item.id}
                       model={item.model}
                       number={item.number}
                       seats={item.seats}
-                      rent={item.vehicleRent}
+                      vehicleRent={item.vehicleRent}
                     />
-                  </>
+                 
                 );
               })}
           </div>

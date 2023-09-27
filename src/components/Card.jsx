@@ -4,7 +4,7 @@ import { MdAirlineSeatReclineExtra } from "react-icons/md";
 function Card(props) {
   return (
     <>
-      <div key={props.id} className="card w-[300px] md:my-10 h-[420px] overflow-hidden relative mx-4 my-4 cursor-pointer transition-all card-shadow bg-gray-100 rounded-xl drop-shadow-xl">
+      <div className="card w-[300px] md:my-10 h-[420px] overflow-hidden relative mx-4 my-4 cursor-pointer transition-all card-shadow bg-gray-100 rounded-xl drop-shadow-xl">
         <div className="top w-[300px] h-[250px]">
           <img src={Car1} className="p-4 w-[300px] absolute" alt="vehicle" />
         </div>

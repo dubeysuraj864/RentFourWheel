@@ -19,7 +19,7 @@ function AllCards() {
     <div>
         <div className="our-luxury">
             <h2 className="text-center my-10 text-5xl font-bold">Our Luxury Brand</h2>
-            <div className="brands flex justify-center items-center">
+            <div className="brands flex flex-col md:flex-row justify-center items-center">
                 <span className="flex justify-center items-center m-2 bg-gray-300 p-3 w-40 rounded-xl text-2xl "><SiAudi className="text-3xl mr-2"/> Audi</span>
                 <span className="flex justify-center items-center m-2 bg-gray-300 p-3 w-40 rounded-xl text-2xl "><SiMercedes className="text-3xl mr-2"/>Mercedes</span>
                 <span className="flex justify-center items-center m-2 bg-gray-300 p-3 w-40 rounded-xl text-2xl "><SiBmw className="text-3xl mr-2"/>BMW</span>

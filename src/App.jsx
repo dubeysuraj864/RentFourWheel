@@ -16,7 +16,6 @@ import Profile from "./pages/Profile";
 import BookNowPage from "./pages/BookNowPage";
 
 function App(location) {
-
   const [vehicleData, setVehicleData] = useState();
   useEffect(() => {
     const getVehicleData = async () => {
@@ -38,7 +37,10 @@ function App(location) {
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/cards" element={<AllCards />} />
-            <Route path="/book-now/:id" element={<BookNowPage data={vehicleData}  />} />
+            <Route
+              path="/book-now/:id"
+              element={<BookNowPage data={vehicleData} />}
+            />
           </Route>
           <Route path="/register" element={<Registration />} />
           <Route path="/agency-register" element={<AgencyRegister />} />

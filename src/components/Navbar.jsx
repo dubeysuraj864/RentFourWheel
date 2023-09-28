@@ -23,15 +23,15 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
-        <nav className="flex justify-between items-center p-4 md:py-4 md:px-20">
+        <nav className="flex flex-col md:flex-row justify-center items-start  md:justify-between md:items-center p-4 md:py-4 md:px-20">
           <div className="logo font-bold text-4xl">
             <Link className="flex items-center" onClick={logoClick}>
               <GiCarWheel />
               Luxury
             </Link>
           </div>
-          <div className="nav-links flex justify-center gap-6 items-center">
-            <ul className="flex items-center m-3 p rounded-3xl ">
+          <div className="nav-links flex md:flex-row flex-col flex-wrap justify-center gap-6 items-start md:items-center">
+            <ul className="flex flex-col md:flex-row items-start md:items-center m-3 p rounded-3xl ">
               {/* ----------- */}
 
               {agency ? (
@@ -116,4 +116,3 @@ function Navbar() {
 
 export default Navbar;
 
-// className="hover:border-yellow-500 py-2 mx-3 text-xl border-transparent transition-all  border-b-[3px]"

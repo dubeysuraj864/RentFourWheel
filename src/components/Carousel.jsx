@@ -27,20 +27,20 @@ function Carousel() {
         <div className="buttons">
           <button
             onClick={scrollLeft}
-            className="left bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[38%] md:left-[43%]"
+            className="left bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[50%] md:left-[43%]"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={scrollRight}
-            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[50%] md:left-[46%]"
+            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[60%] md:left-[46%]"
           >
             <FaAngleRight />
           </button>
 
           <Link
             to="/cards"
-            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[50%] mt-2 px-10 md:left-[51%]"
+            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[0%] mt-2 px-10 md:left-[51%]"
           >
             Wanna View All?
           </Link>
@@ -50,7 +50,6 @@ function Carousel() {
           className="flex justify-start items-center  overflow-auto transition-all scroll-smooth"
         >
           <div className="flex justify-start items-center">
-         
             {vehicleData &&
               vehicleData.map((item) => {
                 return (
@@ -62,11 +61,9 @@ function Carousel() {
                       seats={item.seats}
                       vehicleRent={item.vehicleRent}
                     />
-                    </Link>
-                 
+                  </Link>
                 );
               })}
-              
           </div>
         </div>
       </div>

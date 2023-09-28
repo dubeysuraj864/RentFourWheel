@@ -7,7 +7,7 @@ function OurService() {
         <div className="os-left w-[100%] md:w-[50%] relative ">
           <div className="shape2 rotate-45 absolute -z-20 md:left-[40%] left-[0%] top-[20%] bg-[#F1BC00] w-[500px] h-[400px] md:w-[300px] md:h-[300px]"></div>
 
-          <div className="shape1 absolute md:left-[0%] right-[0%] top-[15%] -z-10 bg-[rgba(63,63,63,0.33)]  w-[500px] h-[400px] md:w-[300px] md:h-[300px] "></div>
+          <div className="shape1 absolute md:left-[0%] right-[0%] top-[15%] -z-10 bg-[rgba(255,255,255,0.33)]  w-[500px] h-[400px] md:w-[300px] md:h-[300px] "></div>
 
           <img
             className="md:w-[600px] w-[500p] mt-[100px] z-30 "
@@ -19,7 +19,9 @@ function OurService() {
         {/* ----right */}
         <div className="os-right md:w-[50%]">
           <div className="flex flex-col justify-center items-start gap-6">
-            <h1 className="text-3xl font-semibold text-blue-700">Our Services</h1>
+            <h1 className="text-3xl font-semibold text-blue-700">
+              Our Services
+            </h1>
             {/* --- */}
             <div className=" flex  items-start">
               <div className="shape2 bg-[#F1BC00] w-[50px] h-[50px] mr-4"></div>

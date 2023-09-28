@@ -20,7 +20,7 @@ function AddVehicle() {
     };
 
     const res = await axios.post("http://localhost/api/vehicle.php", formData);
-    console.log(res)
+    console.log(res);
     setTimeout(() => {
       setMsg(" Vehicle added successfully");
       navigate("/listed-vehicle");
@@ -34,7 +34,7 @@ function AddVehicle() {
           onSubmit={handleSubmit}
           className="form-child w-[100%] md:w-[500px] border p-10 rounded-lg"
         >
-          <h1 className="text-5xl font-semibold">Add New Vehicles</h1>
+          <h1 className="md:text-5xl text-4xl font-semibold">Add New Vehicles</h1>
           <p className="text-red-600">{msg}</p>
           <div className="name mt-10 flex flex-col items-start my-4 ">
             <label htmlFor="model">Vehicle Model</label>
@@ -102,7 +102,7 @@ function AddVehicle() {
           </button>
 
           <button
-            className="border-yellow-400 border-b-2 mx-8 py-1"
+            className="border-yellow-400 border-b-2 md:mx-8 py-1"
             type="submit"
           >
             {" "}

@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
@@ -12,8 +13,20 @@ import EditVehicle from "./pages/EditVehicle";
 import PrivateComponents from "./components/PrivateComponents";
 import Logout from "./pages/Logout";
 import Profile from "./pages/Profile";
+import BookNowPage from "./pages/BookNowPage";
 
 function App(location) {
+
+  const [vehicleData, setVehicleData] = useState();
+  useEffect(() => {
+    const getVehicleData = async () => {
+      const data = await fetch("http://localhost/api/vehicle.php");
+      const result = await data.json();
+      console.log(result);
+      setVehicleData(result);
+    };
+    getVehicleData();
+  }, []);
   return (
     <div className="App overflow-hidden">
       <BrowserRouter>
@@ -25,6 +38,7 @@ function App(location) {
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/cards" element={<AllCards />} />
+            <Route path="/book-now/:id" element={<BookNowPage data={vehicleData}  />} />
           </Route>
           <Route path="/register" element={<Registration />} />
           <Route path="/agency-register" element={<AgencyRegister />} />

@@ -50,10 +50,11 @@ function Carousel() {
           className="flex justify-start items-center  overflow-auto transition-all scroll-smooth"
         >
           <div className="flex justify-start items-center">
+         
             {vehicleData &&
               vehicleData.map((item) => {
                 return (
-               
+                  <Link to={`/book-now/${item.id}`}>
                     <Card
                       key={item.id}
                       model={item.model}
@@ -61,9 +62,11 @@ function Carousel() {
                       seats={item.seats}
                       vehicleRent={item.vehicleRent}
                     />
+                    </Link>
                  
                 );
               })}
+              
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ function ListedVehicle() {
         </h1>
         <div className="flex justify-center flex-wrap ">
           {vehicleData &&
-            vehicleData.map((item) => {
+           vehicleData.map((item) => {
               return (
                 <div key={item.id} className="relative">
                   <AiFillDelete

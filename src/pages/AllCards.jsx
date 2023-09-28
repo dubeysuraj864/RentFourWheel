@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {SiAudi,SiMercedes,SiBmw,SiTesla,SiFerrari} from "react-icons/si"
 
 function AllCards() {
@@ -30,7 +31,7 @@ function AllCards() {
       {vehicleData &&
             vehicleData.map((item) => {
               return (
-                
+                <Link to={`/book-now/${item.id}`}>
                   <Card
                     key={item.id}
                     model={item.model}
@@ -38,6 +39,7 @@ function AllCards() {
                     seats={item.seats}
                     vehicleRent={item.vehicleRent}
                   />
+                  </Link>
         
               );
             })}

@@ -14,13 +14,13 @@ function ListedVehicle() {
   }, []);
 
   const getVehicleData = async () => {
-    const data = await fetch("http://localhost/api/vehicle.php");
+    const data = await fetch("https://rent4wheel.000webhostapp.com/vehicle.php");
     const result = await data.json();
     setVehicleData(result);
   };
 
   const handleDelete = async (id) => {
-    await axios.delete("http://localhost/api/vehicle.php/" + id);
+    await axios.delete("https://rent4wheel.000webhostapp.com/vehicle.php/" + id);
     getVehicleData();
   };
   const navigate = useNavigate();

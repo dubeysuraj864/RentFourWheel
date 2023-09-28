@@ -18,7 +18,7 @@ function Login() {
       customerPassword: customerPassword,
     };
 
-    const result = await axios("http://localhost/api/customers.php", formData);
+    const result = await axios("https://rent4wheel.000webhostapp.com/customers.php", formData);
     const data = await result.data;
 
     console.log(data);

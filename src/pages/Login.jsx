@@ -21,8 +21,10 @@ function Login() {
     const result = await axios("http://localhost/api/customers.php", formData);
     const data = await result.data;
 
+    console.log(data);
+
     const userData = data[0];
-  
+
     if (
       userData.customerName === customerName &&
       userData.customerEmail === customerEmail &&
@@ -33,12 +35,12 @@ function Login() {
       alert("Please register yourself first...");
     }
 
-     const auth = localStorage.setItem("customer", JSON.stringify(formData));
-     if (auth){
+    const auth = localStorage.setItem("customer", JSON.stringify(formData));
+    if (auth) {
       setTimeout(() => {
         navigate("/");
       }, 2000);
-     }
+    }
   };
 
   return (

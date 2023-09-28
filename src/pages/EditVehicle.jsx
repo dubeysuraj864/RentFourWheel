@@ -21,7 +21,7 @@ function EditVehicle() {
   useEffect(() => {
     const vechicleRowData = async () => {
       const getVehicleData = await fetch(
-        "https://rent4wheel.000webhostapp.com/vehicle.php/" + id
+        "http://localhost/api/vehicle.php/" + id
       );
       const resVehicleData = await getVehicleData.json();
       setFormvalue(resVehicleData);

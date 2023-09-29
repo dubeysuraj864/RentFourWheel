@@ -37,6 +37,7 @@ function App(location) {
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/cards" element={<AllCards />} />
+            <Route path="/book-now" element={<BookNowPage/>}/>
             <Route
               path="/book-now/:id"
               element={<BookNowPage data={vehicleData} />}

@@ -54,15 +54,17 @@ function Carousel() {
             {vehicleData &&
               vehicleData.map((item) => {
                 return (
-                  <Link to={`/book-now/${item.id}`}>
+               <div key={item.id}>
+                   <Link  to={`/book-now/${item.id}`}>
                     <Card
-                      key={item.id}
+                    
                       model={item.model}
                       number={item.number}
                       seats={item.seats}
                       vehicleRent={item.vehicleRent}
                     />
                   </Link>
+               </div>
                 );
               })}
           </div>

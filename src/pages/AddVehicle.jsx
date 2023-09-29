@@ -19,7 +19,7 @@ function AddVehicle() {
       vehicleRent: vehicleRent,
     };
 
-    const res = await axios.post("http://localhost/api/vehicle.php", formData);
+    const res = await axios.post("https://rent4wheel.000webhostapp.com/vehicle.php", formData);
     console.log(res);
     setTimeout(() => {
       setMsg(" Vehicle added successfully");

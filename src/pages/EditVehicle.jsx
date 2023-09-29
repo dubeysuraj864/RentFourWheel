@@ -39,7 +39,7 @@ function EditVehicle() {
       vehicleSeats: formvalue.vehicleSeats,
       vehicleRent: formvalue.vehicleRent,
     };
-    const res = await axios.put("http://localhost/api/vehicle.php/", formData);
+    const res = await axios.put("https://rent4wheel.000webhostapp.com/vehicle.php", formData);
 
     if (res.data.success) {
       setMessage(res.data.success);

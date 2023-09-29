@@ -14,13 +14,14 @@ import PrivateComponents from "./components/PrivateComponents";
 import Logout from "./pages/Logout";
 import Profile from "./pages/Profile";
 import BookNowPage from "./pages/BookNowPage";
+import axios from "axios";
 
 function App(location) {
   const [vehicleData, setVehicleData] = useState();
   useEffect(() => {
     const getVehicleData = async () => {
-      const data = await fetch("http://localhost/api/vehicle.php");
-      const result = await data.json();
+      const data = await axios.get("https://rent4wheel.000webhostapp.com/vehicle.php");
+      const result = await data.data;
       console.log(result);
       setVehicleData(result);
     };

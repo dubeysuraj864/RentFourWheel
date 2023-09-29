@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 
 function Login() {
   const [customerName, setCustomerName] = useState("");
@@ -18,8 +17,8 @@ function Login() {
       customerPassword: customerPassword,
     };
 
-    const result = await axios("http://localhost/api/customers.php", formData);
-    const data = await result.data;
+    const result = await fetch("http://localhost/api/customers.php", formData);
+    const data = await result.json();
 
     console.log(data);
 

@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 
 function AgencyLogin() {
   const [agencyName, setAgencyName] = useState("");
@@ -18,8 +17,8 @@ function AgencyLogin() {
       agencyPassword: agencyPassword,
     };
 
-    const result = await axios("http://localhost/api/agency.php", formData);
-    const data = await result.data;
+    const result = await fetch("http://localhost/api/agency.php", formData);
+    const data = await result.json();
 
     const userData = data[0];
 

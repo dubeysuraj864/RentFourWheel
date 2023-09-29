@@ -1,3 +1,4 @@
+import axios from "axios";
 import Card from "./Card";
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaAngleRight } from "react-icons/fa6";
@@ -8,8 +9,8 @@ function Carousel() {
   
   useEffect(() => {
     const getVehicleData = async () => {
-      const data = await fetch("http://localhost/api/vehicle.php");
-      const result = await data.json();
+      const data = await axios.get("https://rent4wheel.000webhostapp.com/vehicle.php");
+      const result = await data.data;
       console.log(result);
       setVehicleData(result);
     };
@@ -23,7 +24,7 @@ function Carousel() {
   };
   return (
     <>
-      <div className="carousel text-center py-20 relative h-[120vh]">
+      <div className="carousel text-center py-20  min-h-[50vh] relative h-auto">
         <h2 className="font-bold text-3xl">We Have Everything You Need</h2>
         <div className="buttons">
           <button

@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 function Carousel() {
   const [vehicleData, setVehicleData] = useState();
+  
   useEffect(() => {
     const getVehicleData = async () => {
-      const data = await fetch("https://rent4wheel.000webhostapp.com/vehicle.php");
+      const data = await fetch("http://localhost/api/vehicle.php");
       const result = await data.json();
       console.log(result);
       setVehicleData(result);
@@ -22,25 +23,25 @@ function Carousel() {
   };
   return (
     <>
-      <div className="carousel text-center py-20 relative">
+      <div className="carousel text-center py-20 relative h-[120vh]">
         <h2 className="font-bold text-3xl">We Have Everything You Need</h2>
         <div className="buttons">
           <button
             onClick={scrollLeft}
-            className="left bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[50%] md:left-[43%]"
+            className="left bg-[#21408E] p-3 cursor-pointer rounded-full text-white absolute bottom-[10%] left-[50%] md:left-[43%]"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={scrollRight}
-            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[60%] md:left-[46%]"
+            className="right bg-[#21408E] p-3 cursor-pointer rounded-full text-white absolute bottom-[10%] left-[60%] md:left-[47%]"
           >
             <FaAngleRight />
           </button>
 
           <Link
             to="/cards"
-            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-0 left-[0%] mt-2 px-10 md:left-[51%]"
+            className="right bg-[#21408E] p-3 rounded-full text-white absolute bottom-[10%] left-[0%] mt-2 px-10 md:left-[51%]"
           >
             Wanna View All?
           </Link>

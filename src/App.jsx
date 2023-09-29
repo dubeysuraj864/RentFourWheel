@@ -19,7 +19,7 @@ function App(location) {
   const [vehicleData, setVehicleData] = useState();
   useEffect(() => {
     const getVehicleData = async () => {
-      const data = await fetch("https://rent4wheel.000webhostapp.com/vehicle.php");
+      const data = await fetch("http://localhost/api/vehicle.php");
       const result = await data.json();
       console.log(result);
       setVehicleData(result);

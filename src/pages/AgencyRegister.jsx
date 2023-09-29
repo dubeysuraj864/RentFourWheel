@@ -19,7 +19,7 @@ function AgencyRegistration() {
     };
 
     const result = await axios.post(
-      "https://rent4wheel.000webhostapp.com/agency.php",
+      "http://localhost/api/agency.php",
       agencyData
     );
     console.log(result.data);

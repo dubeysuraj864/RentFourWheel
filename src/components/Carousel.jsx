@@ -24,9 +24,9 @@ function Carousel() {
   };
   return (
     <>
-      <div className="carousel text-center py-20  min-h-[50vh] relative h-auto">
+      <div className="carousel text-center py-20  h-[80vh] relative ">
         <h2 className="font-bold text-3xl">We Have Everything You Need</h2>
-        <div className="buttons">
+        <div className="buttons ">
           <button
             onClick={scrollLeft}
             className="left bg-[#21408E] p-3 cursor-pointer rounded-full text-white absolute bottom-[10%] left-[50%] md:left-[43%]"

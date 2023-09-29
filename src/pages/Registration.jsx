@@ -19,7 +19,7 @@ function Registration() {
     };
 
     const result = await axios.post(
-      "http://localhost/api/customers.php",
+      "https://rent4wheel.000webhostapp.com/customers.php",
       formData
     );
     console.log(result.data);

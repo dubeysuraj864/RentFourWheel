@@ -17,7 +17,10 @@ function AgencyLogin() {
       agencyPassword: agencyPassword,
     };
 
-    const result = await fetch("http://localhost/api/agency.php", formData);
+    const result = await fetch(
+      "https://rent4wheel.000webhostapp.com/agency.php",
+      formData
+    );
     const data = await result.json();
 
     const userData = data[0];

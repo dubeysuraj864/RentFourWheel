@@ -17,7 +17,7 @@ function Login() {
       customerPassword: customerPassword,
     };
 
-    const result = await fetch("http://localhost/api/customers.php", formData);
+    const result = await fetch("https://rent4wheel.000webhostapp.com/customers.php", formData);
     const data = await result.json();
 
     console.log(data);

@@ -56,7 +56,7 @@ function EditVehicle() {
           onSubmit={handleSubmit}
           className="form-child w-[100%] md:w-[500px] border p-10 rounded-lg"
         >
-          <h1 className="text-5xl font-semibold">Add New Vehicles</h1>
+          <h1 className="text-5xl font-semibold">Edit Vehicles</h1>
           <p className="text-red-600">{message}</p>
           <div className="name mt-10 flex flex-col items-start my-4 ">
             <label htmlFor="model">Vehicle Model</label>

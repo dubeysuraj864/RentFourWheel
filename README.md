@@ -1,3 +1,14 @@
+only agency login - 
+name : agency
+email : a@test.com
+password : 1
+
+only customer login page -
+name : customer
+email : c@test.com
+password : 1
+
+
 ![image](https://github.com/dubeysuraj864/RentFourWheel/assets/89973249/6ec531da-3bac-4582-a5b4-f1117d8e8370)
 ![image](https://github.com/dubeysuraj864/RentFourWheel/assets/89973249/71ba0a62-9409-418e-84b8-84820e2f5035)
 ![image](https://github.com/dubeysuraj864/RentFourWheel/assets/89973249/3018c080-995e-41d0-9189-eb2595fafbb9)

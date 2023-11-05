@@ -24,7 +24,7 @@ function Carousel() {
   };
   return (
     <>
-      <div className="carousel text-center py-20  h-[80vh] relative ">
+      <div className="carousel text-center py-20  h-[90vh] relative ">
         <h2 className="font-bold text-3xl">We Have Everything You Need</h2>
         <div className="buttons ">
           <button
